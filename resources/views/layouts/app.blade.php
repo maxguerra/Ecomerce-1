@@ -12,7 +12,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset ('bower_components\bootstrap\dist\css\bootstrap.min.css')  }}" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="{{asset ('bower_components\bootstrap-material-design\dist\css\bootstrap-material-design.css')  }}">
+    <link rel="stylesheet" href="{{asset ('bower_components\bootstrap-material-design\dist\css\ripples.css')  }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Scripts -->
     <script>
@@ -23,7 +25,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -37,7 +39,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Productos Facilito
                     </a>
                 </div>
 
@@ -54,13 +56,7 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
+                            <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -71,8 +67,6 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                </ul>
-                            </li>
                         @endif
                     </ul>
                 </div>
@@ -83,6 +77,13 @@
     </div>
 
     <!-- Scripts -->
+    <script src = "{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('bbower_components/bootstrap-material-design/dist/js/ripples.min.js') }}"></script>
+    <script src="{{ asset('bower_components/bootstrap-material-design/dist/js/material.min.js') }}"></script>
+    <script>
+        $.material.init();
+    </script>
     <script src="/js/app.js"></script>
 </body>
 </html>
