@@ -1,0 +1,13 @@
+{
+  "name": "ecomerce",
+  "description": "proyecto ecomerce",
+  "main": "",
+  "authors": [
+    "kevin"
+  ],
+  "license": "MIT",
+  "homepage": "welcome.php",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
